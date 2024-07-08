@@ -39,7 +39,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'blog'
 ]
 
 MIDDLEWARE = [
@@ -50,6 +49,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'shop.middleware.CurrentUserMiddleware',
 ]
 
 ROOT_URLCONF = 'MyCart.urls'
@@ -65,6 +65,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'shop.context_processors.session_data',
             ],
         },
     },
@@ -128,3 +129,12 @@ MEDIA_URL = '/media/'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+LOGIN_URL = '/shop/custom-login/'
+LOGIN_REDIRECT_URL = '/shop/index/'
+
+
+# for paypal payment service
+PAYPAL_CLIENT_ID = 'AZrVxtEC11OROF9d-4kGodt0pW3l8OWY2DFKYaCedAVZN393RBmIaUGxrj3v0NSElOzdXBK0ZzBPMu4h'
+PAYPAL_CLIENT_SECRET = 'EPoO7V311s5j9A_xaZcjdwirIsxjNhwXgrnrCnuU4jcfFW2vwe3eqadN0eg5iypqLhi_CX_n46KhDHYx'
+PAYPAL_MODE = 'sandbox'

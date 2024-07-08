@@ -1,0 +1,85 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.mainUl {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 10px;
+    list-style-type: none;
+}
+
+.col{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    border: 1px solid aliceblue;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+}
+
+/* Basic styles for dropdown button and content */
+.dropdown {
+    position: relative;
+    display: block;
+}
+
+.dropbtn {
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+/* Dropdown content (hidden by default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.dropdown-content ul li {
+    padding: 10px;
+}
+
+.dropdown-content ul li a {
+    display: block;
+    color: black;
+    text-decoration: none;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Multilevel dropdown */
+.dropdown-submenu {
+    position: relative;
+}
+
+.dropdown-submenu .submenu {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 100%;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+}
+
+.dropdown-submenu:hover .submenu {
+    display: block;
+}
