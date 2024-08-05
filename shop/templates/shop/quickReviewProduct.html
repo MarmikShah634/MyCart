@@ -1,0 +1,56 @@
+{% extends 'shop/basic.html' %}
+
+{% block title %} Welcome to MyCart {% endblock %}
+
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/quickReviewProduct.css' %}">
+{% endblock %}
+
+{% load custom_filters %}
+
+{% block body %}
+<div class="container my-4">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="row">
+                <img src="/media/{{product.product_image}}">
+            </div>
+
+        </div>
+        <div class="product-description col-md-8">
+            <h1>{{product.product_name}}</h1>
+            <p>
+            <h4>$ {{product.price}}</h4>
+            </p>
+            <p style="margin: 0;">
+            <h5>{{product.description}}</h5>
+            </p>
+            <form method="post">
+                {% csrf_token %}
+                <b>Quantity : <input type="number" id="quantity" name="quantity" min="1" max="200" value="1"></b>
+                <b style="margin: 0 0 0 20px; {% if product.description|contains_whole_words:"men women sarees tshirt shirt" or product.product_name|contains_whole_words:"men women sarees tshirt shirt" %}display: block;{% else %}display: none;{% endif %}">Size :
+                    <select name="size" id="size" id="size">
+                        <option value="XL">XL</option>
+                        <option value="LR">LR</option>
+                        <option value="SM">SM</option>
+                        <option value="XSM">XSM</option>
+                    </select>
+                </b>
+                <div class="row">
+                    <div class="buttons">
+                        <button href="/shop/add_to_cart/{{product.product_id}}" class="btn btn-primary mx-3 my-5">Add to Cart</button>
+                    </div>
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+{% block js %}
+<script src="{% static 'js/quickReviewProduct.js' %}"></script>
+{% endblock %}

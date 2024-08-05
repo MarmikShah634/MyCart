@@ -1,0 +1,25 @@
+<!-- payment_success.html -->
+{% extends 'shop/basic.html' %}
+
+{% block title %} Payment Success {% endblock %}
+
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/success.css' %}">
+{% endblock %}
+
+{% load custom_filters %}
+
+{% block body %}
+<div class="container">
+    <div class="payment-success-container">
+        <h1>Payment Successful!</h1>
+        <p>Your payment has been processed successfully.</p>
+        <div class="payment-details">
+            <p>Transaction ID: {{ transaction_id }}</p>
+        </div>
+        <a href="{% url 'shop:ShopHome' %}" class="btn btn-primary">Back to Home</a>
+    </div>
+</div>
+{% endblock %}

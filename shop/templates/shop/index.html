@@ -1,0 +1,71 @@
+{% extends 'shop/basic.html' %}
+
+{% block title %} Welcome to MyCart {% endblock %}
+
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/index.css' %}">
+{% endblock %}
+
+{% load custom_filters %}
+
+{% block body %}
+<div class="container">
+    
+
+    <h4 style="margin-top:50px">Newly added Mobile phones</h4>
+    <div class="recently-added-products mt-3">
+        <div class="row row-cols-1 row-cols-md-4 g-4">
+            {% for product in recently_added_mobile_products %}
+            <div class="col">
+                <div class="card">
+                    <a href="/shop/quick_review_of_{{ product.product_name }}/{{ product.product_id }}">
+                        <img src="{{ product.product_image.url }}" class="card-img-top" alt="{{ product.product_name }}">
+                    </a>
+                    <div class="card-body">
+                        <h5 class="card-title">{{ product.product_name }}</h5>
+                        <p class="card-text">{{ product.description|slice:"0:50" }}...</p>
+                        <h6 class="card-title">$<span>{{ product.price }}</span></h6>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    
+    
+    <h4 style="margin-top:50px">Cameras that might interest you</h4>
+    <div class="recently-added-products mt-3">
+        <div class="row row-cols-1 row-cols-md-4 g-4">
+            {% for product in recently_added_camera_products %}
+            <div class="col">
+                <div class="card">
+                    <a href="/shop/quick_review_of_{{ product.product_name }}/{{ product.product_id }}">
+                        <img src="{{ product.product_image.url }}" class="card-img-top" alt="{{ product.product_name }}">
+                    </a>
+                    <div class="card-body">
+                        <h5 class="card-title">{{ product.product_name }}</h5>
+                        <p class="card-text">{{ product.description|slice:"0:50" }}...</p>
+                        <h6 class="card-title">$<span>{{ product.price }}</span></h6>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+</div>
+{% endblock %}
+
+{% block js %}
+<script>
+    $(document).ready(function () {
+        $('.dropdown-submenu a.test').on("click", function (e) {
+            $(this).next('ul').toggle();
+            e.stopPropagation();
+            e.preventDefault();
+        });
+    });
+</script>
+{% endblock %}

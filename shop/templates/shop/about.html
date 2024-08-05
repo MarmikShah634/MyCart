@@ -1,0 +1,35 @@
+{% extends 'shop/basic.html' %}
+
+{% block title %} title of about {% endblock %}
+
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/about.css' %}">
+{% endblock  %}
+
+{% block body %}
+<section class="about">
+  <div class="container">
+      <h1>About Us</h1>
+      <p>Welcome to MyCart, your ultimate destination for all your shopping needs. Founded in 20XX, MyCart has been committed to providing high-quality products with exceptional customer service. Whether you're looking for fashion, electronics, home goods, or gifts, we've got you covered. Our mission is to make your shopping experience enjoyable and hassle-free.</p>
+      <p>At MyCart, we value our customers and strive to exceed your expectations. Explore our wide selection of products and enjoy the convenience of shopping online with fast and reliable shipping.</p>
+      <p>Our team at MyCart consists of passionate individuals dedicated to curating the best products and ensuring your satisfaction. We believe in transparency, integrity, and continuous improvement to serve you better.</p>
+      <h1>Our Mission</h1>
+      <p>Our mission is to provide an exceptional online shopping experience by offering a diverse range of products, reliable service, and customer-focused support. We aim to create lasting relationships with our customers based on trust, quality, and satisfaction.</p>
+      <h2>Why Choose MyCart?</h2>
+      <ul>
+          <li>Wide selection of high-quality products</li>
+          <li>Competitive prices and special offers</li>
+          <li>Secure online shopping experience</li>
+          <li>Fast and reliable shipping</li>
+          <li>Dedicated customer support</li>
+      </ul>
+      <p>Whether you're shopping for yourself or looking for the perfect gift, MyCart is your go-to destination. Join thousands of satisfied customers who trust MyCart for their shopping needs.</p>
+  </div>
+</section>
+
+<footer>
+  <p>&copy; 2024 MyCart. All rights reserved.</p>
+</footer>
+{% endblock %}

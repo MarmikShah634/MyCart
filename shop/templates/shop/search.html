@@ -1,0 +1,38 @@
+{% extends 'shop/basic.html' %}
+
+{% block title %} Search Results {% endblock %}
+
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/categoryItems.css' %}">
+{% endblock %}
+
+{% load custom_filters %}
+
+{% block body %}
+<div class="container">
+  <div class="row row-cols-1 row-cols-md-4 g-4 mt-3">
+    {% if items %}
+    {% for item in items %}
+    <div class="col">
+      <div class="card h-100">
+        <a href="/shop/quick_review_of_{{item.product_name}}/{{item.product_id}}">
+          <img src="/media/{{item.product_image}}" class="card-img-top" alt="{{item.product_name}}">
+        </a>
+        <div class="card-body">
+          <h5 class="card-title" id="namepr{{i.id}}">{{item.product_name}}</h5>
+          <p class="card-text">{{item.description|slice:"0:50"}}...</p>
+          <h6 class="card-title">Rs. <span id="pricepr{{item.product_id}}">{{item.price}}</span></h6>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+
+    {% else %}
+    no matches
+    {% endif %}
+
+  </div>
+</div>
+{% endblock %}

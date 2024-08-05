@@ -1,0 +1,43 @@
+/* New CSS for Recently Added Products */
+.recently-added-products {
+    margin-top: 30px;
+}
+
+.recently-added-products .card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.recently-added-products .card-img-top {
+    width: 80%;
+    margin: 10%;
+    height: auto;
+    transition: transform 0.3s ease-in-out; /* Smooth transition for image */
+}
+
+.recently-added-products .card:hover .card-img-top {
+    transform: scale(1.05); /* Zoom effect for the image */
+}
+
+.recently-added-products .card-body {
+    padding: 15px;
+    flex: 1; /* Ensures that the body grows to fill available space */
+}
+
+.recently-added-products .card-title {
+    font-size: 1.25rem;
+    margin-bottom: 10px;
+}
+
+.recently-added-products .card-text {
+    font-size: 1rem;
+    margin-bottom: 10px;
+}
+
+.recently-added-products .card h6 {
+    margin: 0;
+    font-size: 1.1rem;
+    color: #333;
+}
